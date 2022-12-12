@@ -9,8 +9,9 @@ import SearchPage from "../SeachPage";
 import UserContext from "../../../contexts/UserContext";
 
 export default function Homepage() {
-	const { anime } = React.useContext(UserContext) as AnimeSearchContextType;
-	const { disabled } = React.useContext(UserContext) as DisabledContextType;
+	const { anime, disabled } = React.useContext(
+		UserContext,
+	) as AnimeSearchContextType & DisabledContextType;
 
 	return (
 		<PageStyle>

@@ -7,10 +7,9 @@ import UserContext from "../../contexts/UserContext";
 import * as React from "react";
 
 export default function Header() {
-	const { anime, setAnime } = React.useContext(
+	const { anime, setAnime, setDisabled } = React.useContext(
 		UserContext,
-	) as AnimeSearchContextType;
-	const { setDisabled } = React.useContext(UserContext) as DisabledContextType;
+	) as AnimeSearchContextType & DisabledContextType;
 
 	async function searchAnime(event: React.FormEvent<HTMLFormElement>) {
 		event.preventDefault();
