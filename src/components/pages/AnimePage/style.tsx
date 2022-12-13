@@ -12,16 +12,23 @@ export const PagePopUp = styled.div`
 	background-color: rgba(0, 0, 0, 0.8);
 	z-index: 5;
 
-	div {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+	> div {
 		width: 85%;
+		max-height: 90vh;
+		overflow-y: scroll;
 		padding: 10px;
 		background-color: rgb(214, 217, 219);
 		box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
 		border-radius: 5px;
+		display: flex;
+		flex-direction: column;
+		div {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			height: 100%;
+		}
 	}
 
 	p {
@@ -33,5 +40,12 @@ export const PagePopUp = styled.div`
 	h2 {
 		font-weight: bold;
 		margin: 20px;
+	}
+
+	h3 {
+		position: absolute;
+		top: 5;
+		left: 2;
+		z-index: 8;
 	}
 `;

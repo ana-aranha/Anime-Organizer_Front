@@ -1,4 +1,4 @@
-import { Anime, SelectedType } from "../../../services/anime-organizer";
+import { Anime } from "../../../services/anime-organizer";
 import { PagePopUp } from "./style";
 
 export default function AnimePage({
@@ -11,17 +11,19 @@ export default function AnimePage({
 	return (
 		<PagePopUp>
 			<div>
-				<h2>
-					{animeSelected.title.english
-						? animeSelected.title.english
-						: animeSelected.title.romaji}
-				</h2>
-				<img
-					src={animeSelected.coverImage.large}
-					alt={animeSelected.title.romaji}
-				/>
-				<p>{animeSelected.description}</p>
-				<h3 onClick={() => setShow(false)}>CLOSE</h3>
+				<h3 onClick={() => setShow(false)}>X</h3>
+				<div>
+					<h2>
+						{animeSelected.title.english
+							? animeSelected.title.english
+							: animeSelected.title.romaji}
+					</h2>
+					<img
+						src={animeSelected.coverImage.large}
+						alt={animeSelected.title.romaji}
+					/>
+					<p>{animeSelected.description}</p>
+				</div>
 			</div>
 		</PagePopUp>
 	);
