@@ -19,7 +19,6 @@ export default function Header() {
 		if (anime.title === "") {
 			setDisabled(false);
 		}
-		console.log(anime);
 	}
 
 	return (
