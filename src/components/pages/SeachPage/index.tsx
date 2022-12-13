@@ -6,7 +6,13 @@ import {
 } from "../../../services/anime-organizer";
 import { Animes } from "../Homepage/style";
 
-export default function SearchPage({ anime }: { anime: AnimeSearch }) {
+export default function SearchPage({
+	anime,
+	Component,
+}: {
+	anime: AnimeSearch;
+	Component: React.FC;
+}) {
 	const [result, setResult] = useState<Anime[]>([]);
 
 	useEffect(() => {
@@ -21,22 +27,25 @@ export default function SearchPage({ anime }: { anime: AnimeSearch }) {
 
 	return (
 		<Animes>
-			{result.map((el, i) => (
-				<div key={i}>
-					<h2>{el.title.english}</h2>
-					<img
-						src={el.coverImage.large}
-						onClick={() =>
-							console.log({
-								id: el.id,
-								title: el.title,
-								description: el.description,
-							})
-						}
-						alt={el.title.english}
-					/>
-				</div>
-			))}
+			{result.map((el, i) => {
+				return (
+					<div key={i}>
+						<h2>{el.title.english ? el.title.english : el.title.romaji}</h2>
+						<img
+							src={el.coverImage.large}
+							onClick={() => {
+								console.log({
+									id: el.id,
+									title: el.title,
+									description: el.description,
+								});
+							}}
+							alt={el.title.romaji}
+						/>
+					</div>
+				);
+			})}
+			{/* <Component /> */}
 		</Animes>
 	);
 }

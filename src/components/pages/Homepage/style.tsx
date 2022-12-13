@@ -11,7 +11,7 @@ export const PageStyle = styled.div`
 	justify-content: center;
 `;
 
-export const Animes = styled.div`
+export const Animes: any = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;

@@ -17,9 +17,9 @@ export default function PopularityPage() {
 
 	return (
 		<Animes>
-			{animes.map((el) => (
-				<div>
-					<h2>{el.title.english}</h2>
+			{animes.map((el, i) => (
+				<div key={i}>
+					<h2>{el.title.english ? el.title.english : el.title.romaji}</h2>
 					<img
 						src={el.coverImage.large}
 						onClick={() =>
@@ -27,9 +27,10 @@ export default function PopularityPage() {
 								id: el.id,
 								title: el.title,
 								description: el.description,
+								image: el.coverImage.large,
 							})
 						}
-						alt={el.title.english}
+						alt={el.title.romaji}
 					/>
 				</div>
 			))}

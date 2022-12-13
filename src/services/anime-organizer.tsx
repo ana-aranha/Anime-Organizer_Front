@@ -79,8 +79,8 @@ type imageType = {
 };
 
 type titleType = {
-	romanji: string;
-	english: string;
+	romaji: string;
+	english: string | null;
 };
 
 type AnimeSearchContextType = {
@@ -93,6 +93,8 @@ type DisabledContextType = {
 	setDisabled: (disabled: boolean) => void;
 };
 
+type SelectedType = [selected: Anime, setSelected: (selected: Anime) => void];
+
 export {
 	getMyAnimes,
 	getAnimeSearch,
@@ -103,4 +105,10 @@ export {
 	getAnime,
 };
 
-export type { AnimeSearchContextType, DisabledContextType, Anime, AnimeSearch };
+export type {
+	AnimeSearchContextType,
+	DisabledContextType,
+	Anime,
+	AnimeSearch,
+	SelectedType,
+};
