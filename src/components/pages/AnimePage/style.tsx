@@ -44,8 +44,9 @@ export const PagePopUp = styled.div`
 
 	h3 {
 		position: absolute;
-		top: 5;
-		left: 2;
+		top: 20px;
+		right: 20px;
 		z-index: 8;
+		background-color: rgba(255, 255, 255, 0.8);
 	}
 `;
