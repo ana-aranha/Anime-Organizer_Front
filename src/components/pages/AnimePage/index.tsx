@@ -1,5 +1,6 @@
 import { Anime } from "../../../services/anime-organizer";
 import { PagePopUp } from "./style";
+import parse from "html-react-parser";
 
 export default function AnimePage({
 	animeSelected,
@@ -22,7 +23,7 @@ export default function AnimePage({
 						src={animeSelected.coverImage.large}
 						alt={animeSelected.title.romaji}
 					/>
-					<p>{animeSelected.description}</p>
+					<p>{parse(animeSelected.description)}</p>
 				</div>
 			</div>
 		</PagePopUp>
